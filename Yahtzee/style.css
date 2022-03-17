@@ -1,0 +1,46 @@
+.scoreBoard {
+  align-items: center;
+  border-bottom: 1px solid black;
+  width: 100px;
+}
+
+.scoreBoardP2 {
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.scoreboardContainerP1 {
+  border: 1px solid black;
+  display: inline-block;
+}
+
+.scoreboardContainerP2 {
+  border: 1px solid black;
+  width: 100px;
+  display: inline-block;
+}
+
+.dice {
+  float: left;
+  width: 32px;
+  background-color: #f5f5f5;
+  border: #999 1px solid;
+  padding: 10px;
+  text-align: center;
+  align-items: center;
+}
+
+.content {
+  float: left;
+  border: 1px solid black;
+}
+
+.numbers {
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.content2 {
+  display: inline-block;
+  border: 1px solid black;
+}
