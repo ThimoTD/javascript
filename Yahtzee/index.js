@@ -45,6 +45,7 @@ document.getElementById("Chance").addEventListener("click", chance);
 
 //rollen van dobbel
 function roll() {
+  if (count == 3) return;
   clicks();
   for (var i = 0; i < getallen.length; i++) {
     if (vasthouden[i] == 0) {
@@ -54,7 +55,8 @@ function roll() {
   }
   vasthouden = [0, 0, 0, 0, 0];
   if (count == 3) {
-    count = 0;
+    //stoppen
+    //count = 0;
   }
 }
 
@@ -124,11 +126,18 @@ function counttotalp1bonus() {
 }
 
 function totaltop() {
+  let bonus = upperBonusElement.innerHTML ? +upperBonusElement.innerHTML : 0;
+  if (bonus) {
+    bonus = bonus;
+  } else {
+    bonus = 0;
+  }
+  // upperTotalBonusElement.innerHTML =
+  //   parseInt(upperTotalElement.innerHTML) + bonus;
+  console.log(bonus);
   upperTotalBonusElement.innerHTML =
-    parseInt(upperTotalElement.innerHTML) +
-    parseInt(upperBonusElement.innerHTML);
-
-  TotalP1Element.innerHTML = upperTotalBonusElement.innerHTML;
+    bonus + parseInt(upperTotalElement.innerHTML);
+  TotalP1Element.innerHTML = bonus + parseInt(upperTotalElement.innerHTML);
 }
 
 //check yathzee
@@ -320,8 +329,6 @@ function counttotalp2() {
   let yathzee = parseInt(document.getElementById("yathzee").innerHTML);
   let Chance = parseInt(document.getElementById("Chance").innerHTML);
 
-  // console.log(typeof +fourofaKind.innerHTML, "KONIJN");
-
   sum2 =
     +ThreeofaKind +
     +fourofaKind +
@@ -338,7 +345,10 @@ function counttotalp2() {
 }
 
 function totaal() {
-  totalScore.innerHTML = parseInt(upperTotalBonusElement.innerHTML) + sum2;
-  //console.log(TotalP2Element.innerHTML);
-  //console.log(sum2, upperBonusElement.innerHTML);
+  const sum1 = parseInt(upperTotalBonusElement.innerHTML)
+    ? parseInt(upperTotalBonusElement.innerHTML)
+    : 0;
+
+  totalScore.innerHTML = sum1 + sum2;
+  count = 0;
 }
